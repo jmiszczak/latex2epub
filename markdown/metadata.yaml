@@ -1,0 +1,20 @@
+---
+title: 
+- type: main
+  text: Title of this book
+- type: collection
+  text: Is there is series?
+creator:
+- role: author
+  text: A.K. Author
+  file-as: Author, A.K.
+identifier:
+- scheme: ISBN-13
+  text: urn:ISBN:978-XX-XXXXXX-X-X
+publisher: Coool Publishing House
+rights: © 2019 A.K. Author
+cover-image: /home/jam/latex2epub/photos/cover-title.jpg
+css: ./style.css
+lang: en
+date: 2019-11-13
+...
