@@ -1,0 +1,164 @@
+\documentclass[11pt,twoside,openany,final]{octavo}
+
+% page layout
+\usepackage[paperwidth=5in,paperheight=8in,left=0.825in,right=0.475in,bottom=0.750in,top=0.750in]{geometry}
+
+% fonts
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[lining]{ebgaramond}
+\usepackage{microtype}
+
+% quotes
+\usepackage[autostyle=true,english=british]{csquotes}
+\MakeOuterQuote{"}
+\renewcommand{\mkbegdispquote}[2]{\small\flushleft}
+\renewcommand{\mkenddispquote}[2]{\vspace{0.5\baselineskip}}
+
+
+% graphics
+\usepackage{graphicx}
+\usepackage{caption}
+
+% testsing
+\usepackage{blindtext}
+
+% header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{#1}}{\textsc{\bookTitle}}}
+
+\fancyhead[CE]{\rightmark}
+\fancyhead[CO]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+\makeatletter
+\renewcommand\subsection{%
+	\@startsection{subsection}%
+	{2}%
+	{0em}%
+	{-0.666\baselineskip \@minus -2\p@}%
+	{0.333\baselineskip \@minus 2\p@}%
+	{\normalfont\normalsize\sc}}
+\renewcommand\subsubsection{%
+	\@startsection{subsection}%
+	{2}%
+	{0em}%
+	{-0.666\baselineskip \@minus -2\p@}%
+	{0.333\baselineskip \@minus 2\p@}%
+	{\normalfont\em}}
+\makeatother
+
+
+\usepackage{float}
+\setlength{\textfloatsep}{0pt} 
+\setlength{\abovecaptionskip}{10pt}
+\setlength{\belowcaptionskip}{5pt}
+
+% inserting images fomr ../photos directory
+\newcommand{\insertImageRoot}[2]{%
+    \begin{figure}
+	\begin{center}%
+		\includegraphics[width=\textwidth]{../photos/#1/#2.jpg}\newline%
+        \input{../photos/#1/#2.jpg-caption.tex}%
+	\end{center}%
+    \end{figure}
+}
+
+\newcommand{\insertImageRootP}[2]{%
+    \begin{figure}
+        \begin{center}%
+            \includegraphics[width=0.95\textwidth]{../photos/#1/#2.jpg}\newline%
+            \input{../photos/#1/#2.jpg-caption.tex}%
+        \end{center}%
+    \end{figure}
+}
+
+\newcommand{\insertImage}[1]{\insertImageRoot{\imgRoot}{#1}}
+\newcommand{\insertImageP}[1]{\insertImageRootP{\imgRoot}{#1}}
+
+\makeatletter
+
+\newcommand\placeCoordinates{%
+    \vspace{-12pt}
+    \@startsection{subsubsection}%
+    {2}%
+    {0em}%
+	{-10em}%
+	{1em}%
+    {\noindent \textsc{Coordinates:} \normalfont}}
+
+%\AfterEndEnvironment{placeCoordinates}{\noindent\ignorespaces}
+
+\newcommand\smallPlaceCoordinates{%
+    \@startsection{subsubsection}%
+    {2}%
+    {0em}%
+    {-10em}%
+    {1em}%
+    {\noindent \textsc{Coordinates:} \small}}
+\makeatother
+
+\newcommand{\transportMode}[1]{\vspace{6pt}\noindent\textsc{#1}}
+
+% contents
+\usepackage{titletoc}
+\titlecontents{chapter}
+[0.0cm]         % left margin
+{\vspace{3pt}}  % above code
+{%
+{\thecontentslabel. }%
+}              % numbered format
+{\hspace{2em}} % unnumbered format
+{\titlerule*[1pc]{}\contentspage}              % filler-page-format, e.g dots
+
+
+
+\def\bookTitle{Title of this book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{}
+\author{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+%	\pagestyle{empty}
+%	\includepdf[width=5in,height=8in]{cover.pdf}
+%	\newpage
+
+    \pagestyle{empty}
+    \pagenumbering{roman}
+
+%	\vspace{0.45\textheight}
+	{\LARGE \bookTitle}\\
+    
+
+	\newpage
+
+	\input{copyright}
+	\include{titlepage}	
+    \newpage
+	\tableofcontents
+%
+%
+    \pagestyle{fancy}
+    \input{preface}
+    \input{about_author}
+    \newpage
+
+    \setcounter{page}{1}
+    \pagestyle{fancy}
+    \pagenumbering{arabic}
+%
+	\input{ch01_chapter1}
+
+	\input{biblio}
+
+\end{document}
