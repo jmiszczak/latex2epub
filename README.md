@@ -11,8 +11,9 @@ PDF version and eBook version a the same time.
 
 ## Requirements
 
-* Perl for converting LaTeX into Markdown
-* Pandoc for converting Markdown into ePub
+* Perl for converting LaTeX into Markdown, takes car of translating LaTeX
+  commands into MD.
+* [Pandoc](https://pandoc.org/) for converting Markdown into ePub.
 * Bash for running the scripts.
 
 ## Usage
@@ -27,5 +28,5 @@ Markdown directory contains some files needed during the conversion.
 * `files.txt` - list of LaTeX files (without extensin) used to produce Markdown.
   This list is also used to assemble ePub, hene it should be ordered according to the 
   desired order of chapters in the ebook.
-* `metadata.yaml` - metadata used by Pandoc to produce ePub. You need to conslt
+* `metadata.yaml` - metadata used by Pandoc to produce ePub. You need to consult
   https://pandoc.org/MANUAL.html for more info.
