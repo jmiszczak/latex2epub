@@ -15,7 +15,7 @@ for i in `cat files.txt`
 do
   echo $i.md
 done | xargs /usr/bin/pandoc \
-  -o resEbook \
+  -o $resEbook \
   -t epub3 \
   --toc \
   --toc-depth=2 \
