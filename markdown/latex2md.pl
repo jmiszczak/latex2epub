@@ -9,11 +9,12 @@ my $inEnv = "";
 
 while (<>) {
 
-  # sections
+  # sections rules 
+  # should be customized taking into account the structure of the final epub
   s/\\chapter\{Preface\}/\# Preface {epub:type=preface}/g;
   s/\\part\*\{Appendices\}/# Appendices {epub:type=appendix}/g;
   s/\\chapter\*\{(.*)\}/\# $1/g;
-  s/\\chapter\{(.*)\}/\#\# $1/g;
+  s/\\chapter\{(.*)\}/\# $1/g;
   s/\\subsection\*\{(.*)\}/\#\#\# $1/g;
   s/\\subsubsection\*\{(.*)\}/\#\#\#\# $1/g;
   
