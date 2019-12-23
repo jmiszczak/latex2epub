@@ -15,14 +15,18 @@ while (<>) {
   s/\\part\*\{Appendices\}/# Appendices {epub:type=appendix}/g;
   s/\\chapter\*\{(.*)\}/\# $1/g;
   s/\\chapter\{(.*)\}/\# $1/g;
+  s/\\addcontentsline\{toc\}\{chapter\}\{(.*)\}/# $1/g;
   s/\\subsection\*\{(.*)\}/\#\#\# $1/g;
   s/\\subsubsection\*\{(.*)\}/\#\#\#\# $1/g;
   
   # lists
   s/\\begin\{itemize\}/\n/g;
+  s/\\end\{itemize\}/\n/g;
+  s/\\begin\{enumerate\}\[.*\]/\n/g;
+  s/\\setlist\[.*\]\{.*\}//g;
+  s/\\end\{enumerate\}/\n/g;
   s/:\s*\\item/:\n\n\+/g;
   s/\s*\\item/\n\+/g;
-  s/\\end\{itemize\}/\n/g;
   
   # images
   s/\\insertImage[P]?\{(.*)\}/\![](\.\.\/\.\.\/photos\/final-eb\/$1.jpg)/g;
@@ -41,8 +45,8 @@ while (<>) {
   s/\\begin\{quotation\}/\n*/g;
   s/\\end\{quotation\}/*\n/g;
 
-  s/\\begin\{displayquote\}/\n/g;
-  s/\\end\{displayquote\}/\n/g;
+  s/\\begin\{displayquote\}\n/\n/g;
+  s/\\end\{displayquote\}\n/\n/g;
 
   s/\\begin\{center\}/<p style="text-align: center;">/g;
   s/\\end\{center\}/<\/p>/g;
@@ -55,22 +59,26 @@ while (<>) {
   s/\\emph\{(.*?)\}/*$1*/g; # if emph is on single line
   s/\\emph\{(.*?)(\n)(.*?)\}\)/*$1$2$3*)/g; # if emph is on exactly two lines
   s/\\textbf\{(.*)\}/**$1**/g;
+  s/\\vspace\*\{(.*)\}//g;
+  s/\\noindent//g;
+  s/\\fancyhead\{\}//g;
+  s/\{\\Large.*\}//g;
 
+  # multiline textit
   if (m/\\textit\{/) {
     $inEnv = "textit";
     s/\\textit\{/\<i\>/g;
   }
 
   if ($inEnv =~ "textit" and m/\}/) {
-    s/\}/\<\/i\>/g;
-    $inEnv = "";
+      s/\}/\<\/i\>/g;
+      $inEnv = "";
   }
-
 
   # layout, hyphenation
   s/\\hfill//g;
   s/\\newpage/\n/g;
-  s/\\\\/\n/g;
+  s/\\\\/\<br \/\>/g;
   s/\\-//g;
   
   # LaTeX commands
