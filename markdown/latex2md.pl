@@ -5,6 +5,8 @@ use warnings;
 
 local $/ = "";
 
+my $inEnv = "";
+
 while (<>) {
 
   # sections
@@ -22,21 +24,12 @@ while (<>) {
   s/\\end\{itemize\}/\n/g;
   
   # images
-  s/\\insertImage[P]?\{(.*)\}/\![](\.\.\/photos\/$1.jpg)/g;
+  s/\\insertImage[P]?\{(.*)\}/\![](\.\.\/\.\.\/photos\/final-eb\/$1.jpg)/g;
   s/\\begin\{figure\}//g;
   s/\\end\{figure\}//g;
   s/\\caption\*\{.*\}//g;
   s/.*?\\includegraphics.*?\{(..\/mapy_en\/.*?)\}/\![]($1)/g;
   
-  # some formatting
-  s/\\%/%/g;
-  s/\\\\\[.*?\]//g;
-  s/\\\&/\&amp\;/g;
-  s/\{\\sc (.*)\}/$1/g;
-  s/\\emph\{(.*?)\}/*$1*/g; # if emph is on single line
-  s/\\emph\{(.*?)(\n)(.*?)\}\)/*$1$2$3*)/g; # if emph is on exactly two lines
-  s/\\textbf\{(.*)\}/**$1**/g;
-
   # custom commands
   s/\\smallPlaceCoordinates\{(.*)\}/**Coordinates:** $1\n/g;
   s/\\placeCoordinates\{(.*)\}/**Coordinates:** $1\n/g;
@@ -47,8 +40,31 @@ while (<>) {
   s/\\begin\{quotation\}/\n*/g;
   s/\\end\{quotation\}/*\n/g;
 
+  s/\\begin\{displayquote\}/\n/g;
+  s/\\end\{displayquote\}/\n/g;
+
   s/\\begin\{center\}/<p style="text-align: center;">/g;
   s/\\end\{center\}/<\/p>/g;
+
+  # some formatting
+  s/\\%/%/g;
+  s/\\\\\[.*?\]//g;
+  s/\\\&/\&amp\;/g;
+  s/\{\\sc (.*)\}/$1/g;
+  s/\\emph\{(.*?)\}/*$1*/g; # if emph is on single line
+  s/\\emph\{(.*?)(\n)(.*?)\}\)/*$1$2$3*)/g; # if emph is on exactly two lines
+  s/\\textbf\{(.*)\}/**$1**/g;
+
+  if (m/\\textit\{/) {
+    $inEnv = "textit";
+    s/\\textit\{/\<i\>/g;
+  }
+
+  if ($inEnv =~ "textit" and m/\}/) {
+    s/\}/\<\/i\>/g;
+    $inEnv = "";
+  }
+
 
   # layout, hyphenation
   s/\\hfill//g;
