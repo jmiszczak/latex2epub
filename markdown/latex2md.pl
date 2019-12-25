@@ -75,6 +75,18 @@ while (<>) {
       $inEnv = "";
   }
 
+  # multiline em
+  if (m/\{\\em/) {
+    $inEnv = "em";
+    s/\{\\em\ /\<i\>/g;
+  }
+
+  if ($inEnv =~ "em" and m/\}/) {
+      s/\}/\<\/i\>/g;
+      $inEnv = "";
+  }
+
+
   # layout, hyphenation
   s/\\hfill//g;
   s/\\newpage/\n/g;
