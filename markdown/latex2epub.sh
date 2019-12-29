@@ -1,7 +1,8 @@
 #!/bin/bash
+# first parameter should be ISBN number
 
-latexDir=../latex
-resEbook=resulting-ebook.epub
+latexDir=../paperback
+resEbook=$1.epub
 
 # convert LaTeX files to Markdown
 for f in `cat files.txt` 
@@ -20,4 +21,4 @@ done | xargs /usr/bin/pandoc \
   --toc \
   --toc-depth=2 \
   --epub-chapter-level=2 \
-  metadata.yaml
+  $1.yaml
