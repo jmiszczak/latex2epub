@@ -15,9 +15,10 @@ while (<>) {
   s/\\part\*\{Appendices\}/# Appendices {epub:type=appendix}/g;
   s/\\chapter\{Bibliography\}/# Bibliography/g;
   s/\\part\{(.*)\}/\# $1/g;
-  s/\\chapter\*\{(.*)\}/\#\# $1/g;
-  s/\\chapter\{(.*)\}/\#\# $1/g;
+  s/\\chapter\*\{(.*)\}/\# $1/g;
+  s/\\chapter\{(.*)\}/\# $1/g;
   s/\\addcontentsline\{toc\}\{chapter\}\{(.*)\}/\# $1/g;
+  s/\\section\*\{(.*)\}/\#\# $1/g;
   s/\\subsection\*\{(.*)\}/\#\#\# $1/g;
   s/\\subsubsection\*\{(.*)\}/\#\#\#\# $1/g;
   s/\\paragraph\{(.*)\}/__$1__/g;
@@ -33,6 +34,7 @@ while (<>) {
   
   # images
   s/\\insertImage[P]?\{(.*)\}/\![](\.\.\/\.\.\/photos\/final-eb\/$1.jpg)/g;
+  s/\\insertImageRelax\{(.*)\}/\![](\.\.\/\.\.\/photos\/final-eb\/$1.jpg)/g;
   s/\\insertMap[R]?\{(.*)\}/\![](\.\.\/\.\.\/photos\/final-eb\/$1.jpg)/g;
   s/\\begin\{figure\}//g;
   s/\\end\{figure\}//g;
@@ -95,6 +97,7 @@ while (<>) {
   # layout, hyphenation
   s/\\hfill//g;
   s/\\newpage/\n/g;
+  s/\\clearpage/\n/g;
   s/\\\\/\<br \/\>/g;
   s/\\-//g;
   
