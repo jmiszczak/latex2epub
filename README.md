@@ -37,3 +37,4 @@ Markdown directory contains some files needed during the conversion.
 ## Examples
 
 * I. Miszczak, [Gallipoli Peninsula and the Troad](https://www.amazon.com/gp/product/B07NCQPD9Y/), 2019.
+* I. Miszczak, *The Secrets of Ephesus*, [eBook](https://www.amazon.com/gp/product/B07NCQPD9Y/) and [paperback](https://www.amazon.com/dp/8395654014/) 2020.
