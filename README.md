@@ -25,7 +25,10 @@ The scripts were testes and used under:
 
 Just run `./latex2epub.sh` in the `markdown` directory. You can alter
 `latexDir` and `resEbook` in this file to point to your source LaTeX files and resultig epub.
+
 List of files processed by `latex2epub.sh` is in `files.txt`.
+
+Image used as a ePub cover is defined in `metadata.yaml`.
 
 ## Important files
 
