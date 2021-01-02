@@ -17,12 +17,15 @@ of the resulting ebook.
 * [Pandoc](https://pandoc.org/) for converting Markdown into ePub.
 * Bash for running the scripts.
 
-The scripts were testes and used under Ubuntu 18.04, with Pandoc 2.5 and Perl 5.
+The scripts were testes and used under:
+* Ubuntu 18.04, with Pandoc 2.5 and Perl 5.
+* Ubuntu 20.04, with Pandoc 2.11 and Pel 5.
 
 ## Usage
 
-Just run `./latex2epub.sh` in the `Markdown` directory. You can alter
-`latexDir` and `resEbook` in this file to point to your source files and resultig epub.
+Just run `./latex2epub.sh` in the `markdown` directory. You can alter
+`latexDir` and `resEbook` in this file to point to your source LaTeX files and resultig epub.
+List of files processed by `latex2epub.sh` is in `files.txt`.
 
 ## Important files
 
