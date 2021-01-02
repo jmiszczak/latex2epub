@@ -43,6 +43,6 @@ Markdown directory contains some files needed during the conversion.
 
 ## Examples
 
-* I. Miszczak, *Gallipoli Peninsula and the Troad (TAN Travel Guide)*, [paperback](https://www.amazon.com/gp/product/8394426999/) and [ebook](https://www.amazon.com/gp/product/B07NCQPD9Y/), 2nd ed., 2019.
+* I. Miszczak, *Gallipoli Peninsula and the Troad (TAN Travel Guide)*, [ebook](https://www.amazon.com/gp/product/B07NCQPD9Y/) and [paperback](https://www.amazon.com/gp/product/8394426999/), 2nd ed., 2019.
 * I. Miszczak, *The Secrets of Pamukkale and Hierapolis (TAN Travel Guide)*, [ebook](https://www.amazon.com/dp/B08381BH5S) and [paperback](https://www.amazon.com/dp/8395313055), 2020.
-* I. Miszczak, *The Secrets of Ephesus*, [eBook](https://www.amazon.com/gp/product/B07NCQPD9Y/) and [paperback](https://www.amazon.com/dp/8395654014/) 2020.
+* I. Miszczak, *The Secrets of Ephesus*, [ebook](https://www.amazon.com/gp/product/B07NCQPD9Y/) and [paperback](https://www.amazon.com/dp/8395654014/), 2020.
