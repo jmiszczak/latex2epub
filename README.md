@@ -12,8 +12,8 @@ of the resulting ebook.
 
 ## Requirements
 
-* Perl for converting LaTeX into Markdown, takes car of translating LaTeX
-  commands into MD.
+* Perl for converting LaTeX into Markdown, takes care of translating LaTeX
+  commands into MD and needs to know what command it has to convert.
 * [Pandoc](https://pandoc.org/) for converting Markdown into ePub.
 * Bash for running the scripts.
 
