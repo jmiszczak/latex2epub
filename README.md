@@ -19,7 +19,7 @@ of the resulting ebook.
 
 The scripts were testes and used under:
 * Ubuntu 18.04, with Pandoc 2.5 and Perl 5.
-* Ubuntu 20.04, with Pandoc 2.11 and Pel 5.
+* Ubuntu 20.04, with Pandoc 2.11 and Perl 5.30.
 
 ## Usage
 
