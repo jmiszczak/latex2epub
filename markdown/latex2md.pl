@@ -26,7 +26,7 @@ while (<>) {
   # lists
   s/\\begin\{itemize\}/\n/g;
   s/\\end\{itemize\}/\n/g;
-  s/\\begin\{enumerate\}\[.*\]/\n/g;
+  s/\\begin\{enumerate\}/\n/g;
   s/\\setlist\[.*\]\{.*\}//g;
   s/\\end\{enumerate\}/\n/g;
   s/:\s*\\item/:\n\n\+/g;
