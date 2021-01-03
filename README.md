@@ -19,13 +19,17 @@ of the resulting ebook.
 
 The scripts were testes and used under:
 * Ubuntu 18.04, with Pandoc 2.5 and Perl 5.
-* Ubuntu 20.04, with Pandoc 2.11 and Pel 5.
+* Ubuntu 20.04, with Pandoc 2.11 and Perl 5.30.
 
 ## Usage
 
-Just run `./latex2epub.sh` in the `markdown` directory. You can alter
-`latexDir` and `resEbook` in this file to point to your source LaTeX files and resultig epub.
+Just run 
+```./latex2epub.sh metadata``` 
+in the `markdown` directory. You can alter `latexDir` and `resEbook` in this file to point to your source LaTeX files and resultig ePub.
+
 List of files processed by `latex2epub.sh` is in `files.txt`.
+
+Image used as a ePub cover is defined in `metadata.yaml`.
 
 ## Important files
 
@@ -39,5 +43,6 @@ Markdown directory contains some files needed during the conversion.
 
 ## Examples
 
-* I. Miszczak, [Gallipoli Peninsula and the Troad](https://www.amazon.com/gp/product/B07NCQPD9Y/), 2019.
-* I. Miszczak, *The Secrets of Ephesus*, [eBook](https://www.amazon.com/gp/product/B07NCQPD9Y/) and [paperback](https://www.amazon.com/dp/8395654014/) 2020.
+* I. Miszczak, *Gallipoli Peninsula and the Troad (TAN Travel Guide)*, [ebook](https://www.amazon.com/gp/product/B07NCQPD9Y/) and [paperback](https://www.amazon.com/gp/product/8394426999/), 2nd ed., 2019.
+* I. Miszczak, *The Secrets of Pamukkale and Hierapolis (TAN Travel Guide)*, [ebook](https://www.amazon.com/dp/B08381BH5S) and [paperback](https://www.amazon.com/dp/8395313055), 2020.
+* I. Miszczak, *The Secrets of Ephesus*, [ebook](https://www.amazon.com/gp/product/B07NCQPD9Y/) and [paperback](https://www.amazon.com/dp/8395654014/), 2020.
