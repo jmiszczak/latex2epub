@@ -47,6 +47,7 @@ while (<>) {
   s/\\transportMode\{(.*)\}/**$1**/g;
   s/\\ie/i.e /;
   s/\\greek\{(.*)\}/$1/g;
+  s/\\bulg\{(.*)\}/$1/g;
 
   # environments
   s/\\begin\{quotation\}/\n*/g;
