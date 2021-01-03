@@ -24,6 +24,7 @@ while (<>) {
   s/\\paragraph\{(.*)\}/__$1__/g;
   
   # lists
+  s/\\bibitem\{.*\}\n/+ /g;
   s/\\begin\{itemize\}/\n/g;
   s/\\end\{itemize\}/\n/g;
   s/\\begin\{enumerate\}/\n/g;
@@ -58,6 +59,9 @@ while (<>) {
 
   s/\\begin\{center\}/<p style="text-align: center;">/g;
   s/\\end\{center\}/<\/p>/g;
+
+  s/\\begin\{thebibliography\}\{.*\}//g;
+  s/\\end\{thebibliography\}//g;
 
   # some formatting
   s/\\%/%/g;
@@ -110,6 +114,7 @@ while (<>) {
   s/\\pagestyle.*\}\n//g;
   s/\\addcontentsline.*\}\n//g;
   s/\\markboth\{.*\}\n//g;
+  s/\n\\newblock//g;
   s/^%/\n/g;
   s/^%.*\n/\n/g;
   s/~/ /g;
