@@ -105,6 +105,7 @@ while (<>) {
   s/\\clearpage/\n/g;
   s/\\\\/\<br \/\>/g;
   s/\\-//g;
+  s/\{\\nobreak (.*?)\}/$1/g;
   
   # LaTeX commands
   s/\\def.*\n//g;
