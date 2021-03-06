@@ -12,10 +12,13 @@ of the resulting ebook.
 
 ## Requirements
 
-* Perl for converting LaTeX into Markdown, takes care of translating LaTeX
-  commands into MD and needs to know what command it has to convert.
+* [Perl](https://www.perl.org/) for converting LaTeX into Markdown, takes care
+  of translating LaTeX commands into MD and needs to know what command it has to
+  convert.
 * [Pandoc](https://pandoc.org/) for converting Markdown into ePub.
-* Bash for running the scripts.
+* [Pybtex](https://pybtex.org) for convering BibTeX into Markdown if you need
+  fancy bibliographies.
+* [Bash](https://www.gnu.org/software/bash/) for running the scripts.
 
 The scripts were testes and used under:
 * Ubuntu 18.04, with Pandoc 2.5 and Perl 5.
@@ -23,9 +26,12 @@ The scripts were testes and used under:
 
 ## Usage
 
-Just run 
+COnverions from LaTeX into eBook requires running
+
 ```./latex2epub.sh metadata``` 
-in the `markdown` directory. You can alter `latexDir` and `resEbook` in this file to point to your source LaTeX files and resultig ePub.
+
+in the `ebook` directory. You can alter `latexDir` and `resEbook` in this file
+to point to your source LaTeX files and resultig ePub.
 
 List of files processed by `latex2epub.sh` is in `files.txt`.
 
