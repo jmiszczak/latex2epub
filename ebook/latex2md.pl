@@ -54,11 +54,20 @@ while (<>) {
   s/\\begin\{quotation\}/\n*/g;
   s/\\end\{quotation\}/*\n/g;
 
+  s/\\begin\{quote\}/\n\>/g;
+  s/\\end\{quote\}/\n/g;
+
   s/\\begin\{displayquote\}\n/\<blockquote\>\n/g;
   s/\\end\{displayquote\}\n/\<\/blockquote\>\n/g;
 
   s/\\begin\{center\}/<p style="text-align: center;">/g;
   s/\\end\{center\}/<\/p>/g;
+
+  s/\\begin\{flushright\}/\n/g;
+  s/\\end\{flushright\}/\n/g;
+
+  s/\\begin\{minipage\}\{.*?\}//g;
+  s/\\end\{minipage\}//g;
 
   # bibliography using BibTeX generated files
   s/\\begin\{thebibliography\}\{.*\}//g;
@@ -135,6 +144,7 @@ while (<>) {
   s/^\}/ /g;
   s/\\mbox\{(.*?)\}/$1/g;
   s/\\vspace\{.*?\}//g;
+  s/\\hspace\{.*?\}/\n\n/g;
  
 
   # some math
