@@ -1,6 +1,6 @@
 # latex2epub
 
-Simple workflow for converting LaTeX projects into ePUB files.
+This set of scripts and templates provides a simple workflow for converting LaTeX projects into ePUB files.
 
 ## Introduction
 
@@ -26,7 +26,7 @@ The scripts were testes and used under:
 
 ## Usage
 
-COnverions from LaTeX into eBook requires running
+Converions from LaTeX into eBook requires running
 
 ```./latex2epub.sh metadata``` 
 
