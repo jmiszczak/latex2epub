@@ -145,7 +145,7 @@ while (<>) {
   s/\\mbox\{(.*?)\}/$1/g;
   s/\\vspace\{.*?\}//g;
   s/\\hspace\{.*?\}/\n\n/g;
-  s/\\phantom\{.*?\}//g
+  s/\\phantom\{.*?\}//g;
  
 
   # some math
